@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Temperature Conversion</title>
+</head>
+<body>
+
+<ul id="temperatureList">
+    <!-- 여기에 자바스크립트로 추가될 내용 -->
+</ul>
+
+<script>
+function celsiusToFahrenheit(celsius) {
+    return celsius * 9/5 + 32;
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    var list = document.getElementById('temperatureList');
+    for (var celsius = 0; celsius <= 10; celsius++) {
+        var fahrenheit = celsiusToFahrenheit(celsius);
+        var listItem = document.createElement('li');
+        listItem.innerHTML = `<span>섭씨 ${celsius}도:</span> 화씨 ${fahrenheit.toFixed(1)}도`;
+        list.appendChild(listItem);
+    }
+});
+</script>
+
+</body>
+</html>
